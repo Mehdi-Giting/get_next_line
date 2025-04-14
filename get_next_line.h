@@ -3,19 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ellabiad <ellabiad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 14:07:29 by ellabiad          #+#    #+#             */
-/*   Updated: 2025/04/10 15:20:09 by ellabiad         ###   ########.fr       */
+/*   Updated: 2025/04/14 15:03:46 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
+# define BUFFER_SIZE 5
 # include <stdlib.h>
+# include <stddef.h>
+# include <stdio.h>
 # include <unistd.h>
-# include <limits.h>
+# include <fcntl.h>
 
 char	*get_next_line(int fd);
-void	ft_putchar(char c);
+char	*fill_stash(char *buffer, char *stash, int fd);
+char	*fill_line(char *stash);
+size_t	ft_strlen(const char *str);
+char	*ft_strchr(char *str, char c);
+char	*ft_strdup(char *str);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char *s1, char *s2);
+
 #endif
