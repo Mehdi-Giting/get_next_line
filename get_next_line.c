@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 14:07:00 by ellabiad          #+#    #+#             */
-/*   Updated: 2025/04/14 17:09:14 by marvin           ###   ########.fr       */
+/*   Updated: 2025/04/14 17:56:32 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,10 @@ char	*fill_stash(char *buffer, char *stash, int fd)
 	{
 		byte_read = read(fd, buffer, BUFFER_SIZE);
 		buffer[byte_read] = '\0';
-		//printf("buffer : %s\n", buffer);
 		stash = ft_strjoin(stash, buffer);
 		//printf("stash : %s\n", stash);
 		if (ft_strchr(buffer, '\n') != NULL)
-		{
-			//printf("%s\n", buffer);
 			return (stash);
-		}
 	}
 	return (stash);
 }
@@ -46,12 +42,17 @@ char	*fill_line(char *stash)
 		line = ft_substr(stash, 0, i + 1);
 	else
 		line = ft_substr(stash, 0, i);
-	if (ft_strchr(stash, '\n'))
-		new_stash = ft_substr(stash, i + 1, ft_strlen(stash) - i);
+	if (stash[i] == '\n')
+	{
+		new_stash = ft_strjoin(NULL, stash + i + 1);
+		//printf("newstash : %s\n", new_stash);
+		//printf("stash + i : %s\n", stash + i + 1);
+		free(stash);
+	}
 	else
-		new_stash = NULL;
-	free(stash);
-	stash = new_stash;
+		free(stash);
+	stash = ft_strdup(new_stash);
+	//printf("stash : %s\n", stash);
 	return (line);
 }
 
@@ -68,6 +69,7 @@ char	*get_next_line(int fd)
 		return (NULL);
 	stash = fill_stash(buffer, stash, fd);
 	line = fill_line(stash);
+	//printf("stash : %s\n", stash);
 	if (!stash || !stash[0])
 	{
 		free(buffer);
@@ -81,10 +83,11 @@ int	main(void)
 {
 	int	i = open("./test.txt", O_RDONLY);
 	char *str;
-	for (int j = 0; j < 3; j++)
+	for (int j = 0; j < 2; j++)
 	{
 		str = get_next_line(i);
-		printf("%s", str);
+		printf("Line printed : %s", str);
 		free(str);
 	}
+	printf("\n");
 }
