@@ -6,13 +6,12 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 14:07:00 by ellabiad          #+#    #+#             */
-/*   Updated: 2025/04/14 14:39:15 by marvin           ###   ########.fr       */
+/*   Updated: 2025/04/14 17:09:14 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-// line 51 i do substr stash and i plus 1 so i can jump the \n
 char	*fill_stash(char *buffer, char *stash, int fd)
 {
 	int	byte_read;
@@ -22,9 +21,14 @@ char	*fill_stash(char *buffer, char *stash, int fd)
 	{
 		byte_read = read(fd, buffer, BUFFER_SIZE);
 		buffer[byte_read] = '\0';
+		//printf("buffer : %s\n", buffer);
 		stash = ft_strjoin(stash, buffer);
+		//printf("stash : %s\n", stash);
 		if (ft_strchr(buffer, '\n') != NULL)
+		{
+			//printf("%s\n", buffer);
 			return (stash);
+		}
 	}
 	return (stash);
 }
@@ -77,13 +81,10 @@ int	main(void)
 {
 	int	i = open("./test.txt", O_RDONLY);
 	char *str;
-	str = get_next_line(i);
-	printf("%s\n", str);
-	free(str);
-	// for (int j = 0; j < 10; j++)
-	// {
-	// 	str = get_next_line(i);
-	// 	printf("%s\n", str);
-	// 	free(str);
-	// }
+	for (int j = 0; j < 3; j++)
+	{
+		str = get_next_line(i);
+		printf("%s", str);
+		free(str);
+	}
 }
