@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 14:07:00 by ellabiad          #+#    #+#             */
-/*   Updated: 2025/04/15 17:58:09 by marvin           ###   ########.fr       */
+/*   Updated: 2025/04/15 18:09:54 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 //to its new value, i free the old stash inside ft_strjoin. It is the only
 //difference with the "real" ft_strjoin we had to make for the libft.
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*fill_stash(char *buffer, char *stash, int fd)
 {
