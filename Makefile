@@ -17,15 +17,12 @@ SRC = get_next_line.c get_next_line_utils.c
 OBJ = $(SRC:.c=.o)
 NAME = gnl
 
-# Règles de compilation
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
-# Création des fichiers objets
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-# Nettoyage des fichiers objets et de l'exécutable
 clean:
 	rm -f $(OBJ)
 

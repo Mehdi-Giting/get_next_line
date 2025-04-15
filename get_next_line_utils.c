@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 15:19:11 by ellabiad          #+#    #+#             */
-/*   Updated: 2025/04/14 17:07:50 by marvin           ###   ########.fr       */
+/*   Updated: 2025/04/15 16:16:23 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ size_t	ft_strlen(const char *str)
 char	*ft_strchr(char *str, char c)
 {
 	int	i;
-	
+
 	i = 0;
 	while (str[i])
 	{
@@ -99,18 +99,11 @@ char	*ft_strjoin(char *s1, char *s2)
 	if (!dest)
 		return (NULL);
 	while (s1[i])
-	{
-		dest[j] = s1[i];
-		i++;
-		j++;
-	}
+		dest[j++] = s1[i++];
 	i = 0;
 	while (s2[i])
-	{
-		dest[j] = s2[i];
-		i++;
-		j++;
-	}
+		dest[j++] = s2[i++];
 	dest[j] = '\0';
+	free(s1);
 	return (dest);
 }

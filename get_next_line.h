@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 14:07:29 by ellabiad          #+#    #+#             */
-/*   Updated: 2025/04/14 17:08:25 by marvin           ###   ########.fr       */
+/*   Updated: 2025/04/15 16:48:22 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 char	*get_next_line(int fd);
 char	*fill_stash(char *buffer, char *stash, int fd);
-char	*fill_line(char *stash);
+char	*fill_line(char **stash);
 size_t	ft_strlen(const char *str);
 char	*ft_strchr(char *str, char c);
 char	*ft_strdup(char *str);
