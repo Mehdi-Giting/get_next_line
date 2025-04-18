@@ -3,16 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ellabiad <ellabiad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 14:07:00 by ellabiad          #+#    #+#             */
-/*   Updated: 2025/04/15 17:58:09 by marvin           ###   ########.fr       */
+/*   Updated: 2025/04/18 13:56:17 by ellabiad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-//Quick note here, ft_strjoin is used but due to its only purpose to set stash
-//to its new value, i free the old stash inside ft_strjoin. It is the only
-//difference with the "real" ft_strjoin we had to make for the libft.
 
 #include "get_next_line.h"
 
@@ -62,7 +58,7 @@ char	*get_next_line(int fd)
 {
 	char		*buffer;
 	char		*line;
-	static char	*stash[1024] = { NULL };
+	static char	*stash[1024] = {NULL};
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
@@ -82,52 +78,3 @@ char	*get_next_line(int fd)
 	line = fill_line(&stash[fd]);
 	return (line);
 }
-
-// int	main(void)
-// {
-// 	int		fd1, fd2, fd3;
-// 	char	*line;
-
-// 	fd1 = open("test1.txt", O_RDONLY);
-// 	fd2 = open("test2.txt", O_RDONLY);
-// 	fd3 = open("test3.txt", O_RDONLY);
-
-// 	if (fd1 < 0 || fd2 < 0 || fd3 < 0)
-// 	{
-// 		perror("Error opening one of the files");
-// 		return (1);
-// 	}
-
-// 	line = get_next_line(fd1);
-// 	if (line)
-// 	{
-// 		printf("test1.txt: %s", line);
-// 		free(line);
-// 	}
-
-// 	line = get_next_line(fd2);
-// 	if (line)
-// 	{
-// 		printf("test2.txt: %s", line);
-// 		free(line);
-// 	}
-
-// 	line = get_next_line(fd3);
-// 	if (line)
-// 	{
-// 		printf("test3.txt: %s", line);
-// 		free(line);
-// 	}
-
-// 	line = get_next_line(fd1);
-// 	if (line)
-// 	{
-// 		printf("test1.txt: %s", line);
-// 		free(line);
-// 	}
-
-// 	close(fd1);
-// 	close(fd2);
-// 	close(fd3);
-// 	return (0);
-// }
