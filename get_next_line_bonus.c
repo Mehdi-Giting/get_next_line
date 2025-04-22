@@ -6,7 +6,7 @@
 /*   By: ellabiad <ellabiad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 14:07:00 by ellabiad          #+#    #+#             */
-/*   Updated: 2025/04/18 13:57:45 by ellabiad         ###   ########.fr       */
+/*   Updated: 2025/04/22 14:59:18 by ellabiad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,52 +82,3 @@ char	*get_next_line(int fd)
 	line = fill_line(&stash[fd]);
 	return (line);
 }
-
-// int	main(void)
-// {
-// 	int		fd1, fd2, fd3;
-// 	char	*line;
-
-// 	fd1 = open("test1.txt", O_RDONLY);
-// 	fd2 = open("test2.txt", O_RDONLY);
-// 	fd3 = open("test3.txt", O_RDONLY);
-
-// 	if (fd1 < 0 || fd2 < 0 || fd3 < 0)
-// 	{
-// 		perror("Error opening one of the files");
-// 		return (1);
-// 	}
-
-// 	line = get_next_line(fd1);
-// 	if (line)
-// 	{
-// 		printf("test1.txt: %s", line);
-// 		free(line);
-// 	}
-
-// 	line = get_next_line(fd2);
-// 	if (line)
-// 	{
-// 		printf("test2.txt: %s", line);
-// 		free(line);
-// 	}
-
-// 	line = get_next_line(fd3);
-// 	if (line)
-// 	{
-// 		printf("test3.txt: %s", line);
-// 		free(line);
-// 	}
-
-// 	line = get_next_line(fd1);
-// 	if (line)
-// 	{
-// 		printf("test1.txt: %s", line);
-// 		free(line);
-// 	}
-
-// 	close(fd1);
-// 	close(fd2);
-// 	close(fd3);
-// 	return (0);
-// }
