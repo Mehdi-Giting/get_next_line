@@ -6,13 +6,9 @@
 /*   By: ellabiad <ellabiad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 14:07:00 by ellabiad          #+#    #+#             */
-/*   Updated: 2025/04/22 14:59:18 by ellabiad         ###   ########.fr       */
+/*   Updated: 2025/04/22 15:16:40 by ellabiad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-//Quick note here, ft_strjoin is used but due to its only purpose to set stash
-//to its new value, i free the old stash inside ft_strjoin. It is the only
-//difference with the "real" ft_strjoin we had to make for the libft.
 
 #include "get_next_line_bonus.h"
 
