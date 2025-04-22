@@ -6,7 +6,7 @@
 /*   By: ellabiad <ellabiad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 14:07:00 by ellabiad          #+#    #+#             */
-/*   Updated: 2025/04/22 16:42:42 by ellabiad         ###   ########.fr       */
+/*   Updated: 2025/04/22 18:08:42 by ellabiad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,16 +77,4 @@ char	*get_next_line(int fd)
 		return (NULL);
 	line = fill_line(&stash[fd]);
 	return (line);
-}
-
-int main(void)
-{
-	int fd = open("./test.txt", O_RDONLY);
-	char *line;
-	for (int i = 0; i < 2; i++)
-	{
-		line = get_next_line(fd);
-		printf("test.txt: %s", line);
-		free(line);
-	}
 }
