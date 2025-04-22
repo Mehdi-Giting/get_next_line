@@ -6,13 +6,15 @@
 /*   By: ellabiad <ellabiad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 14:07:29 by ellabiad          #+#    #+#             */
-/*   Updated: 2025/04/22 15:16:33 by ellabiad         ###   ########.fr       */
+/*   Updated: 2025/04/22 18:06:51 by ellabiad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_BONUS_H
 # define GET_NEXT_LINE_BONUS_H
-# define BUFFER_SIZE 5
+#ifndef BUFFER_SIZE
+	# define BUFFER_SIZE 5
+#endif
 # include <stdlib.h>
 # include <stddef.h>
 # include <stdio.h>
